@@ -6,6 +6,8 @@ def prime_number(num):
     return "no"
   elif num == 2:
     return "yes"
+  # elif str(num)[-1] == "5":
+  #     return"no"
   elif num % 2 != 0:
     while num_is_prime == False:
       for i in range(num_divide, 0, -1):
