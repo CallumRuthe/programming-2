@@ -20,14 +20,14 @@ answers = {
     "question_2": "31",
     "question_3": "27",
     "question_4": "c",
-    "question_5": "Pythagoras of Samos",
+    "question_5": "pythagoras of samos",
 }
 
 # Introduce the user to the quiz
 print("Hello! My name is M4th Tut0r.\nMy job is to test your mathematical ability.\n")
 
 # Find out if the user is ready to begin
-user_ready = input("Are you ready to begin the quiz: ")
+user_ready = input("Are you ready to begin the quiz: ").strip("!,.? ")
 
 # If the user is not ready to start, power down. Otherwise continue to the quiz.
 if user_ready.lower() == "no":
@@ -36,7 +36,7 @@ if user_ready.lower() == "no":
 elif user_ready.lower() == "yes":
     print("\nPerfect. We will now begin the quiz!\n")
 else:
-    print("\nIncomputable. Self destruct sequence initiating.")
+    print("\nUncompilable. Self destruct sequence initiating.")
     for i in range(10, 0, -1):
         print(i)
     print("Goodbye user")
@@ -50,9 +50,8 @@ for q in questions:
     # Ask a question and get the user response
     question_number += 1
     print(f"Question {question_number}: ")
-    print(q,"\n")
-    response = input("A:")
-    print("\n")
+    print(q)
+    response = input("A: ").lower().strip(".?, !")
 
     answer = answers[f"question_{question_number}"]
     # Inform the user if they got the question right or wrong
@@ -64,5 +63,10 @@ for q in questions:
     else:
         print(f"Unfortunately that is not correct. The correct answer was: {answer} \nBetter luck with the next question.\n")
 
-# Congratulate the user and tell them how many questionts they got correct
-print(f"Congratulations! You have completed the quiz with {correct_answers}/5 questions correct.")
+# Congratulate the user based on how they did and tell them how many questions they got correct
+if correct_answers < 3:
+    print(f"You might want to study some more. You have completed the quiz with {correct_answers}/5 questions correct.")
+elif correct_answers < 5:
+    print(f"Well done! You have completed the quiz with {correct_answers}/5 questions correct.")
+else:
+    print(f"Amazing, you got everything correct! You have completed the quiz with {correct_answers}/5 questions correct.")
