@@ -20,7 +20,7 @@ while not url.endswith("#"):
 
     # find the url/href of the image
     comic_elem = soup.select("#comic img")
-    if comic_elem == [] or comic_elem[0].get("src").startswith("/2067"):
+    if comic_elem == [] or comic_elem[0].get("src").startswith("/2067") or comic_elem[0].get("src").startswith("/1525"):
         print("Couldn't find image...")
     else:
         comic_url = "https:" + comic_elem[0].get("src")
