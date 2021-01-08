@@ -15,7 +15,7 @@ while not url.endswith("#"):
     # Download the html
     print(F"Downloading page {url}...")
     res = requests.get(url)
-    res.raise_for_status() # STOP if there's and error
+    res.raise_for_status() # STOP if there's an error
     soup = bs4.BeautifulSoup(res.text, "html.parser")
 
     # find the url/href of the image
