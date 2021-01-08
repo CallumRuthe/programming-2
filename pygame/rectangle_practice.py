@@ -37,6 +37,19 @@ def main():
     clock = pygame.time.Clock()
 
     rectangle = Rectangle()
+    rectangle.x = 395
+    rectangle.y = 295
+
+    # CREATE ANOTHER RECTANGLE
+    #   CHANGE ist properties
+    #   reminder to sue .notation to change properties
+    #   i.e. rectangle_two.x = 100
+    blue_rectangle = Rectangle()
+    blue_rectangle.x = 325
+    blue_rectangle.y = 275
+    blue_rectangle.width = 150
+    blue_rectangle.length = 50
+    blue_rectangle.colour = SKY_BLUE
 
     # ----- MAIN LOOP
     while not done:
@@ -49,6 +62,7 @@ def main():
 
         # ----- DRAW
         screen.fill(BLACK)
+        pygame.draw.rect(screen, blue_rectangle.colour, (blue_rectangle.x, blue_rectangle.y, blue_rectangle.width, blue_rectangle.length))
         pygame.draw.rect(screen, rectangle.colour, (rectangle.x, rectangle.y, rectangle.width, rectangle.length))
 
         # ----- UPDATE
