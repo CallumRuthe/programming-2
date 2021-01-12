@@ -20,7 +20,7 @@ TITLE = "DVD Image"
 
 class Block():
     def __init__(self):
-        # initial location in the middle
+        # initial loc in the middle
         self.x, self.y = (WIDTH/2, HEIGHT/2)
         self.width, self.height = (125, 100)
         self.colour = SKY_BLUE
@@ -82,8 +82,6 @@ def main():
     second_block.x_vel = -3
     second_block.x = 100
     second_block.y = 100
-    second_block.width = 125
-    second_block.height = 100
 
     # ----- MAIN LOOP
     while not done:
@@ -105,17 +103,7 @@ def main():
 
         block.draw(screen)
 
-        pygame.draw.rect(
-            screen,
-            second_block.colour,
-            [
-                second_block.x,
-                second_block.y,
-                second_block.width,
-                second_block.height,
-
-            ]
-        )
+        second_block.draw(screen)
 
         # ----- UPDATE
         pygame.display.flip()
